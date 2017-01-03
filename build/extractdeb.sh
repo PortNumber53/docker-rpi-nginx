@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
-containerID=$(docker run -d mariusrumpf/buildnginx)
-docker cp $containerID:/root/build/nginx_1.9.9-1~jessie_armhf.deb .
+containerID=$(docker run -d portnumber53/buildnginx)
+docker cp $containerID:/root/build/nginx_1.11.8-1~jessie_armhf.deb .
+sync
 sleep 1
 docker rm $containerID

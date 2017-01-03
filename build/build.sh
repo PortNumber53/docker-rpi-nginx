@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-docker build --tag mariusrumpf/buildnginx .
+docker build --tag portnumber53/buildnginx .
