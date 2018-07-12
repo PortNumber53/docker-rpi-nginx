@@ -137,9 +137,11 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
     && ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log
 
+COPY etc/nginx.conf /etc/nginx/nginx.conf
+COPY etc/nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 
 # Define mountable directories.
-VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/www/html"]
+VOLUME ["/etc/nginx", "/var/www/html"]
 
 # Expose ports.
 EXPOSE 80
